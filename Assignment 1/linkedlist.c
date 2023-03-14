@@ -56,8 +56,10 @@ listNode *insert_pos(listNode *head, int ele,int pos)
     for (int i = 0; i < pos; i++)
     {
         temp = temp->next;
-        nex = temp->next;
     }
+    
+    nex = temp->next;
+    
     temp->next = createNode(ele);
     temp->next->next = nex;
 
@@ -127,6 +129,20 @@ listNode *search(listNode *head, int ele)
     return NULL;
 }
 
+void display(listNode *head){
+    if(head == NULL){
+        printf("List is empty.\n");
+        return;
+    }
+
+    listNode *temp = head;
+    while(temp != NULL){
+        printf("%d ",temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
 
 int main(){
     listNode *head = NULL;
@@ -139,10 +155,11 @@ int main(){
         printf("5.Delete at begin\n");
         printf("6.Delete at position\n");
         printf("7.Search an element\n");
-        printf("8.Exit\n");
+        printf("8.Display\n");
+        printf("9.Exit\n");
         printf("Enter your choice: ");
         scanf("%d",&choice);
-        
+        printf("\n");
         switch (choice)
         {
         case 1:
@@ -162,11 +179,12 @@ int main(){
         case 3:
             printf("Enter the element to be inserted: ");
             scanf("%d",&ele);
-            
+            printf("\n");
+
             printf("Enter the position: ");
             scanf("%d",&pos);
             
-            head = insert_pos(head,ele,pos-1);
+            head = insert_pos(head,ele,pos-2);
             break;
         
         case 4:
@@ -182,7 +200,8 @@ int main(){
         case 6:
             printf("Enter the position: ");
             scanf("%d",&pos);
-        
+            printf("\n");
+
             head = delete_pos(head,pos-1);
             printf("Element deleted.\n");
             break;
@@ -190,15 +209,20 @@ int main(){
         case 7:
             printf("Enter the element to be searched: ");
             scanf("%d",&ele);
-            
+            printf("\n");
+
             if(search(head,ele) == NULL)
                 printf("Element not found.\n");
             else
                 printf("Element found.\n");
 
             break;
-        
+
         case 8:
+            display(head);
+            break;
+        
+        case 9:
             exit(0);
             break;
         
@@ -206,6 +230,7 @@ int main(){
             printf("Invalid choice.\n");
             break;
         }
+        printf("\n");
     }
     return 0;
 }
