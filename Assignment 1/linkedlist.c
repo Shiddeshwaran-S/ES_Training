@@ -3,12 +3,14 @@
 
 typedef struct Node listNode;
 
+// List node structure
 struct Node
 {
     int data;
     struct Node *next;
 };
 
+// create a new node and return its address
 listNode *createNode(int ele){
     listNode *newNode = (listNode*)malloc(sizeof(listNode));
     newNode->data = ele;
@@ -16,6 +18,7 @@ listNode *createNode(int ele){
     return newNode;
 }
 
+// insert the element at end of the list and return the address of the head node
 listNode *insert_end(listNode *head,int ele){
     if (head == NULL){
         return createNode(ele);
@@ -29,6 +32,7 @@ listNode *insert_end(listNode *head,int ele){
     return head;
 }
 
+// insert the element at begin of the list and return the address of the head node
 listNode *insert_begin(listNode *head, int ele)
 {
     if (head == NULL)
@@ -44,6 +48,7 @@ listNode *insert_begin(listNode *head, int ele)
     return head;
 }
 
+// insert the element at the given position of the list and return the address of the head node
 listNode *insert_pos(listNode *head, int ele,int pos)
 {
     if (head == NULL)
@@ -66,6 +71,7 @@ listNode *insert_pos(listNode *head, int ele,int pos)
     return head;
 }
 
+// delete the element at the given position of the list and return the address of the head node
 listNode *delete_pos(listNode *head, int pos)
 {
 
@@ -86,6 +92,7 @@ listNode *delete_pos(listNode *head, int pos)
     return head;
 }
 
+// delete the element at begin of the list and return the address of the head node
 listNode *delete_begin(listNode *head) {
 
     if (head == NULL)
@@ -96,6 +103,7 @@ listNode *delete_begin(listNode *head) {
     return head;
 }
 
+// delete the element at end of the list and return the address of the head node
 listNode *delete_end(listNode *head)
 {
 
@@ -113,6 +121,7 @@ listNode *delete_end(listNode *head)
     return head;
 }
 
+// search the element in the list and return the address of the node if found else return NULL
 listNode *search(listNode *head, int ele)
 {
     if (head == NULL)
@@ -129,6 +138,7 @@ listNode *search(listNode *head, int ele)
     return NULL;
 }
 
+// display the list elements
 void display(listNode *head){
     if(head == NULL){
         printf("List is empty.\n");
@@ -143,7 +153,7 @@ void display(listNode *head){
     printf("\n");
 }
 
-
+// driver code
 int main(){
     listNode *head = NULL;
     int choice,ele,pos;
