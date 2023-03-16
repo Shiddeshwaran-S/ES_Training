@@ -1,5 +1,7 @@
 # 2. Explain nodejs event loop.
 
+![image](https://user-images.githubusercontent.com/127477266/225576187-f7527ac4-f5c8-48d5-b4ff-db920120a770.png)
+
 <div align="justify">
     The event loop is a queue of callbacks. Whenever an asynchronous function completes, the callback is added to the queue. The event loop keeps checking the queue and executes the callbacks in the queue one by one. This is how NodeJS handles asynchronous calls. The event loop is a single-threaded process. It is a part of the NodeJS runtime. It is implemented using libuv. The event loop contains 5 different queues. These queues are as follows:
     
