@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct Node listNode;
 
@@ -11,21 +11,25 @@ struct Node
 };
 
 // create a new node and return its address
-listNode *createNode(int ele){
-    listNode *newNode = (listNode*)malloc(sizeof(listNode));
+listNode *createNode(int ele)
+{
+    listNode *newNode = (listNode *)malloc(sizeof(listNode));
     newNode->data = ele;
     newNode->next = NULL;
     return newNode;
 }
 
 // insert the element at end of the list and return the address of the head node
-listNode *insert_end(listNode *head,int ele){
-    if (head == NULL){
+listNode *insert_end(listNode *head, int ele)
+{
+    if (head == NULL)
+    {
         return createNode(ele);
     }
 
     listNode *temp = head;
-    while(temp->next != NULL){
+    while (temp->next != NULL)
+    {
         temp = temp->next;
     }
     temp->next = createNode(ele);
@@ -41,7 +45,7 @@ listNode *insert_begin(listNode *head, int ele)
     }
 
     listNode *temp = head;
-    
+
     head = createNode(ele);
     head->next = temp;
 
@@ -49,7 +53,7 @@ listNode *insert_begin(listNode *head, int ele)
 }
 
 // insert the element at the given position of the list and return the address of the head node
-listNode *insert_pos(listNode *head, int ele,int pos)
+listNode *insert_pos(listNode *head, int ele, int pos)
 {
     if (head == NULL)
     {
@@ -62,9 +66,9 @@ listNode *insert_pos(listNode *head, int ele,int pos)
     {
         temp = temp->next;
     }
-    
+
     nex = temp->next;
-    
+
     temp->next = createNode(ele);
     temp->next->next = nex;
 
@@ -75,25 +79,29 @@ listNode *insert_pos(listNode *head, int ele,int pos)
 listNode *delete_pos(listNode *head, int pos)
 {
 
-    if(head == NULL) return NULL;
+    if (head == NULL)
+        return NULL;
 
     listNode *temp = head;
     listNode *prev = NULL;
 
-    for(int i = 0; i < pos; i++){
+    for (int i = 0; i < pos; i++)
+    {
         prev = temp;
         temp = temp->next;
     }
 
-    if(temp == NULL)
+    if (temp == NULL)
         return NULL;
-    else prev->next = temp->next;
+    else
+        prev->next = temp->next;
 
     return head;
 }
 
 // delete the element at begin of the list and return the address of the head node
-listNode *delete_begin(listNode *head) {
+listNode *delete_begin(listNode *head)
+{
 
     if (head == NULL)
         return NULL;
@@ -139,15 +147,18 @@ listNode *search(listNode *head, int ele)
 }
 
 // display the list elements
-void display(listNode *head){
-    if(head == NULL){
+void display(listNode *head)
+{
+    if (head == NULL)
+    {
         printf("List is empty.\n");
         return;
     }
 
     listNode *temp = head;
-    while(temp != NULL){
-        printf("%d ",temp->data);
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
         temp = temp->next;
     }
     printf("\n");
