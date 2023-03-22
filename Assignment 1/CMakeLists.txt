@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.26.0)
 
-set(CMAKE_C_COMPILER "C:\\src\\MinGW\\bin\\gcc")
+set(CMAKE_C_COMPILER "C:\\src\\MinGW\\bin\\gcc.exe")
 
 project(Assginment1 LANGUAGES C)
 
