@@ -5,6 +5,7 @@
  * 
  *******************************************************************/
 
+const mouseEvents = require("global-mouse-events");
 const keypress = require('keypress');
 process.stdin.setRawMode(true);
 keypress(process.stdin);
@@ -15,4 +16,20 @@ process.stdin.on('keypress', (str, key) => {
   } else {
     console.log(`${key === undefined ? 'undefied' : key.name} Key pressed!`,key);
   }
+});
+
+mouseEvents.on("mouseup", event => {
+  console.log(event); // { x: 2962, y: 483, button: 1 }
+});
+
+mouseEvents.on("mousedown", event => {
+  console.log(event); // { x: 2962, y: 483, button: 1 }
+});
+
+mouseEvents.on("mousemove", event => {
+  console.log(event); // { x: 2962, y: 482 }
+});
+
+mouseEvents.on("mousewheel", event => {
+  console.log(event); // { x: 2962, y: 483, delta: -1, axis: 0 }
 });

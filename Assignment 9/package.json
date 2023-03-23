@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "keypress": "^0.2.1"
+    "bindings": "^1.5.0",
+    "global-mouse-events": "^1.1.0",
+    "keypress": "^0.2.1",
+    "node-addon-api": "^6.0.0",
+    "node-gyp": "^9.3.1",
+    "robotjs": "^0.6.0"
   }
 }
