@@ -67,3 +67,8 @@ async function readData() {
 }
 
 readData();
+
+module.exports = {
+    "promise": prom,
+    "async/await": readData,
+};
