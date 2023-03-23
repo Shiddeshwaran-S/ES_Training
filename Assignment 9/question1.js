@@ -19,17 +19,17 @@ process.stdin.on('keypress', (str, key) => {
 });
 
 mouseEvents.on("mouseup", event => {
-  console.log(event); // { x: 2962, y: 483, button: 1 }
+  console.log(event);
 });
 
 mouseEvents.on("mousedown", event => {
-  console.log(event); // { x: 2962, y: 483, button: 1 }
+  console.log(event); 
 });
 
 mouseEvents.on("mousemove", event => {
-  console.log(event); // { x: 2962, y: 482 }
+  console.log(event);
 });
 
 mouseEvents.on("mousewheel", event => {
-  console.log(event); // { x: 2962, y: 483, delta: -1, axis: 0 }
+  console.log(event);
 });
