@@ -5,8 +5,14 @@
  * 
  ******************************************************************/
 
-var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
 var date = new Date(Date.now());
 
-console.log("Today("+date.toLocaleDateString()+") is " + days[date.getDay()]);
+function dateToDay(date){
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    return ("Today("+date.toLocaleDateString()+") is " + days[date.getDay()]);
+}
+
+console.log(dateToDay(date));
+
+module.exports = dateToDay;
