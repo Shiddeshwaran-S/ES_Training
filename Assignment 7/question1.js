@@ -19,7 +19,7 @@
 const fs =  require('fs');
 
 fs.readFile(
-    '..\\Assignmet 6\\question-1.md',
+    'C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md',
     callbackFunction,
 );
 
@@ -38,7 +38,7 @@ function callbackFunction(err, data) {
 // Promise
 
 const prom = new Promise((resolve, reject) => {
-    let data = fs.readFileSync('..\\Assignmet 6\\question-1.md');
+    let data = fs.readFileSync('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
 
     if(data === null) {
         reject('Error');
@@ -59,14 +59,17 @@ console.log('\n\n\n2----------------------------\n\n\n');
 // Async/Await
 
 async function readData() {
-    let data = await fs.promises.readFile('..\\Assignmet 6\\question-1.md');
-
-    console.log("async/await ",data);
-
-    console.log('\n\n\n3----------------------------\n\n\n');
+    return await fs.promises.readFile('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
 }
 
-readData();
+readData().then((data) => {
+    console.log("async/await ",data);
+    console.log('\n\n\n3----------------------------\n\n\n');
+}).catch((err) => {
+    console.log("async/await ",err);
+    console.log('\n\n\n3----------------------------\n\n\n');
+});
+
 
 module.exports = {
     "promise": prom,
