@@ -20,9 +20,9 @@ function multiplyCallback(a, callback) {
     callback(a * 10);
 }
 
-addCallback(2, 3, (result) => {
-    console.log("callback ",result);
-});
+// addCallback(2, 3, (result) => {
+//     console.log("callback ",result);
+// });
 
 // ======================================================================================
 // promise
@@ -47,13 +47,13 @@ function multiplyPromise(a,b){
     });
 }
 
-addPromise(2,3).then((result) => {
-    return multiplyPromise(result,10);
-}).then((data)=>{
-    console.log("Promise ",data);
-}).catch((err) => {
-    console.log("Promise ",err);
-});
+// addPromise(2,3).then((result) => {
+//     return multiplyPromise(result,10);
+// }).then((data)=>{
+//     console.log("Promise ",data);
+// }).catch((err) => {
+//     console.log("Promise ",err);
+// });
 
 // ======================================================================================
 // async/await
@@ -66,18 +66,26 @@ async function multiplyAsync(a){
     return a * 10;
 }
 
-addAsync(10, 20).then((data)=>{
-    console.log("async/await ",data);
-});
+// addAsync(10, 20).then((data)=>{
+//     console.log("async/await ",data);
+// });
 
 // ======================================================================================
 // prmoisfy
 const callProm = util.promisify(addCallback);
 
-callProm(5,6).then((data)=>{
-    console.log("promisify ",data);
-}).catch((err)=>{
-    console.log("promisify ",err);
-});
+// callProm(5,6).then((data)=>{
+//     console.log("promisify ",data);
+// }).catch((err)=>{
+//     console.log("promisify ",err);
+// });
 
 // ======================================================================================
+
+module.exports = {
+    addCallback,
+    addPromise,
+    multiplyPromise,
+    addAsync,
+    callProm
+};
