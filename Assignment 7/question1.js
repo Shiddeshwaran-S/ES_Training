@@ -18,27 +18,27 @@
 // Callback
 const fs =  require('fs');
 
-fs.readFile(
-    '..\\Assignmet 6\\question-1.md',
-    callbackFunction,
-);
+// fs.readFile(
+//     'C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md',
+//     callbackFunction,
+// );
 
-function callbackFunction(err, data) {
-    if (err) {
-        console.log('\n\n\n1----------------------------\n\n\n');
-        console.log("callback ",err);
-        console.log('\n\n\n1----------------------------\n\n\n');
-    } else {
-        console.log('\n\n\n1----------------------------\n\n\n');
-        console.log("callback ",data);
-        console.log('\n\n\n1----------------------------\n\n\n');
-    }
-}
+// function callbackFunction(err, data) {
+//     if (err) {
+//         console.log('\n\n\n1----------------------------\n\n\n');
+//         console.log("callback ",err);
+//         console.log('\n\n\n1----------------------------\n\n\n');
+//     } else {
+//         console.log('\n\n\n1----------------------------\n\n\n');
+//         console.log("callback ",data);
+//         console.log('\n\n\n1----------------------------\n\n\n');
+//     }
+// }
 
 // Promise
 
 const prom = new Promise((resolve, reject) => {
-    let data = fs.readFileSync('..\\Assignmet 6\\question-1.md');
+    let data = fs.readFileSync('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
 
     if(data === null) {
         reject('Error');
@@ -47,26 +47,29 @@ const prom = new Promise((resolve, reject) => {
     }
 });
 
-prom.then((data) => {
-    console.log("custom promise ",data);
-}).catch((err) => {
-    console.log("custom promise ",err);
-});
+// prom.then((data) => {
+//     console.log("custom promise ",data);
+// }).catch((err) => {
+//     console.log("custom promise ",err);
+// });
 
-console.log('\n\n\n2----------------------------\n\n\n');
+// console.log('\n\n\n2----------------------------\n\n\n');
 
 
 // Async/Await
 
 async function readData() {
-    let data = await fs.promises.readFile('..\\Assignmet 6\\question-1.md');
-
-    console.log("async/await ",data);
-
-    console.log('\n\n\n3----------------------------\n\n\n');
+    return await fs.promises.readFile('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
 }
 
-readData();
+// readData().then((data) => {
+//     console.log("async/await ",data);
+//     console.log('\n\n\n3----------------------------\n\n\n');
+// }).catch((err) => {
+//     console.log("async/await ",err);
+//     console.log('\n\n\n3----------------------------\n\n\n');
+// });
+
 
 module.exports = {
     "promise": prom,

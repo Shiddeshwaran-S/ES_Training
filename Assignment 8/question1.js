@@ -13,6 +13,6 @@ function dateToDay(date){
     return ("Today("+date.toLocaleDateString()+") is " + days[date.getDay()]);
 }
 
-console.log(dateToDay(date));
+// console.log(dateToDay(date));
 
 module.exports = dateToDay;

@@ -10,9 +10,11 @@ const fs = require('fs');
 const util = require('util');
 
 const readFile = util.promisify(fs.readFile);
-
+/*
 readFile('..\\Assignmet 6\\question-1.md').then((data) => {
     console.log("promisify ",data);
 }).catch((err) => {
     console.log("promisify ",err);
 });
+*/
+module.exports = readFile;
