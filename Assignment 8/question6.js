@@ -32,6 +32,6 @@ function printObject(obj) {
     return result;
 }
 
-console.log(printObject(person));
+// console.log(printObject(person));
 
-printObject(person);
+module.exports = printObject;
