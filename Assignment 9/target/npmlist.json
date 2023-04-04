@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"assignment-9","dependencies":{"bindings":{"version":"1.5.0"},"global-mouse-events":{"version":"1.1.0"},"keypress":{"version":"0.2.1"},"node-addon-api":{"version":"6.0.0"},"node-gyp":{"version":"9.3.1"},"robotjs":{"version":"0.6.0"}}}
