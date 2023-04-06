@@ -37,15 +37,17 @@ const fs =  require('fs');
 
 // Promise
 
-const prom = new Promise((resolve, reject) => {
-    let data = fs.readFileSync('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
-
-    if(data === null) {
-        reject('Error');
-    } else {
-        resolve(data);
-    }
-});
+function prom(){
+    return new Promise((resolve, reject) => {
+        fs.readFile('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md',(err, data) => {
+            if(err){
+                reject(err);
+            } else {
+                resolve(data);
+            }
+        });
+    });
+}
 
 // prom.then((data) => {
 //     console.log("custom promise ",data);
