@@ -61,7 +61,7 @@ function prom(){
 // Async/Await
 
 async function readData() {
-    return await fs.readFile('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
+    return await fs.promises.readFile('C:\\Users\\shidd\\VS Code\\ES_Training\\Assignment 6\\question-1.md');
 }
 
 // readData().then((data) => {
